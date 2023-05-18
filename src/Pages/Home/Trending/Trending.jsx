@@ -1,10 +1,14 @@
 import React from "react";
 import img from "../../../assets/2.webp";
+
+import { FaRegStar, FaStar } from "react-icons/fa";
+import Rating from "react-rating";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import { FreeMode } from "swiper";
 
 const Trending = () => {
   return (
@@ -16,27 +20,53 @@ const Trending = () => {
           eiusmod incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-      <div>
+      <div className="mb-16">
         <Swiper
-          spaceBetween={50}
+          freeMode={true}
+          grabCursor={true}
+          modules={[FreeMode]}
+          className="mySwiper"
           slidesPerView={3}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
+          spaceBetween={10}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            480: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+          }}
         >
           <SwiperSlide>
             <div className="card w-96 bg-base-100 shadow-xl">
               <figure className="px-10 pt-10">
                 <img
-                  src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                  src={
+                    "https://img.freepik.com/free-photo/robot-holding-key_1048-3578.jpg?size=626&ext=jpg&ga=GA1.2.1896889893.1665354643&semt=ais"
+                  }
                   alt="Shoes"
                   className="rounded-xl"
                 />
               </figure>
               <div className="card-body items-center text-center">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <h2 className="card-title">Avengers</h2>
+                <p>$ 20.00</p>
+                <Rating
+                  className="text-warning"
+                  readonly
+                  placeholderRating={4.5}
+                  emptySymbol={<FaRegStar></FaRegStar>}
+                  placeholderSymbol={<FaStar></FaStar>}
+                  fullSymbol={<FaStar></FaStar>}
+                />
                 <div className="card-actions">
-                  <button className="btn btn-primary">Buy Now</button>
+                  <button className="btn ">Buy Now</button>
                 </div>
               </div>
             </div>
@@ -45,16 +75,26 @@ const Trending = () => {
             <div className="card w-96 bg-base-100 shadow-xl">
               <figure className="px-10 pt-10">
                 <img
-                  src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                  src={
+                    "https://img.freepik.com/free-photo/robot-holding-key_1048-3578.jpg?size=626&ext=jpg&ga=GA1.2.1896889893.1665354643&semt=ais"
+                  }
                   alt="Shoes"
                   className="rounded-xl"
                 />
               </figure>
               <div className="card-body items-center text-center">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <h2 className="card-title">Avengers</h2>
+                <p>$ 20.00</p>
+                <Rating
+                  className="text-warning"
+                  readonly
+                  placeholderRating={4.5}
+                  emptySymbol={<FaRegStar></FaRegStar>}
+                  placeholderSymbol={<FaStar></FaStar>}
+                  fullSymbol={<FaStar></FaStar>}
+                />
                 <div className="card-actions">
-                  <button className="btn btn-primary">Buy Now</button>
+                  <button className="btn ">Buy Now</button>
                 </div>
               </div>
             </div>
@@ -63,16 +103,26 @@ const Trending = () => {
             <div className="card w-96 bg-base-100 shadow-xl">
               <figure className="px-10 pt-10">
                 <img
-                  src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                  src={
+                    "https://img.freepik.com/free-photo/robot-holding-key_1048-3578.jpg?size=626&ext=jpg&ga=GA1.2.1896889893.1665354643&semt=ais"
+                  }
                   alt="Shoes"
                   className="rounded-xl"
                 />
               </figure>
               <div className="card-body items-center text-center">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <h2 className="card-title">Avengers</h2>
+                <p>$ 20.00</p>
+                <Rating
+                  className="text-warning"
+                  readonly
+                  placeholderRating={4.5}
+                  emptySymbol={<FaRegStar></FaRegStar>}
+                  placeholderSymbol={<FaStar></FaStar>}
+                  fullSymbol={<FaStar></FaStar>}
+                />
                 <div className="card-actions">
-                  <button className="btn btn-primary">Buy Now</button>
+                  <button className="btn ">Buy Now</button>
                 </div>
               </div>
             </div>
@@ -81,16 +131,82 @@ const Trending = () => {
             <div className="card w-96 bg-base-100 shadow-xl">
               <figure className="px-10 pt-10">
                 <img
-                  src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                  src={
+                    "https://img.freepik.com/free-photo/robot-holding-key_1048-3578.jpg?size=626&ext=jpg&ga=GA1.2.1896889893.1665354643&semt=ais"
+                  }
                   alt="Shoes"
                   className="rounded-xl"
                 />
               </figure>
               <div className="card-body items-center text-center">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <h2 className="card-title">Avengers</h2>
+                <p>$ 20.00</p>
+                <Rating
+                  className="text-warning"
+                  readonly
+                  placeholderRating={4.5}
+                  emptySymbol={<FaRegStar></FaRegStar>}
+                  placeholderSymbol={<FaStar></FaStar>}
+                  fullSymbol={<FaStar></FaStar>}
+                />
                 <div className="card-actions">
-                  <button className="btn btn-primary">Buy Now</button>
+                  <button className="btn ">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="card w-96 bg-base-100 shadow-xl">
+              <figure className="px-10 pt-10">
+                <img
+                  src={
+                    "https://img.freepik.com/free-photo/robot-holding-key_1048-3578.jpg?size=626&ext=jpg&ga=GA1.2.1896889893.1665354643&semt=ais"
+                  }
+                  alt="Shoes"
+                  className="rounded-xl"
+                />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">Avengers</h2>
+                <p>$ 20.00</p>
+                <Rating
+                  className="text-warning"
+                  readonly
+                  placeholderRating={4.5}
+                  emptySymbol={<FaRegStar></FaRegStar>}
+                  placeholderSymbol={<FaStar></FaStar>}
+                  fullSymbol={<FaStar></FaStar>}
+                />
+                <div className="card-actions">
+                  <button className="btn ">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="card w-96 bg-base-100 shadow-xl">
+              <figure className="px-10 pt-10">
+                <img
+                  src={
+                    "https://img.freepik.com/free-photo/robot-holding-key_1048-3578.jpg?size=626&ext=jpg&ga=GA1.2.1896889893.1665354643&semt=ais"
+                  }
+                  alt="Shoes"
+                  className="rounded-xl"
+                />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">Avengers</h2>
+                <p>$ 20.00</p>
+                <Rating
+                  className="text-warning"
+                  readonly
+                  placeholderRating={4.5}
+                  emptySymbol={<FaRegStar></FaRegStar>}
+                  placeholderSymbol={<FaStar></FaStar>}
+                  fullSymbol={<FaStar></FaStar>}
+                />
+                <div className="card-actions">
+                  <button className="btn ">Buy Now</button>
                 </div>
               </div>
             </div>
