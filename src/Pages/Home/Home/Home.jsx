@@ -4,10 +4,10 @@ import Trending from '../Trending/Trending';
 
 const Home = () => {
     return (
-        // <div>
-        //     <Banner></Banner>
-        //     <Trending></Trending>
-        // </div>
+        <div>
+            <Banner></Banner>
+            <Trending></Trending>
+        </div>
     );
 };
 
