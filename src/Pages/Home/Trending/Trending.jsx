@@ -14,7 +14,7 @@ const Trending = () => {
     <div className="container">
       <div className="text-center  my-16">
         <h2 className=" text-3xl md:text-5xl font-bold">Trending Product</h2>
-        <p className="texl-lg md:text-xl w-full md:w-1/2 mx-auto mt-5">
+        <p className="texl-lg md:text-xl w-96 md:w-1/2 mx-auto mt-5">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod incididunt ut labore et dolore magna aliqua.
         </p>

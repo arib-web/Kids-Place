@@ -8,17 +8,16 @@ const Blog = () => {
     <div className="container my-16">
       <div className="text-center my-16">
         <h2 className=" text-3xl md:text-5xl font-bold">Latest Blog</h2>
-        <p className="texl-lg md:text-xl w-full md:w-1/2 mx-auto mt-5">
+        <p className="texl-lg md:text-xl w-96 md:w-1/2 mx-auto mt-5">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="">
             <img
               src={blog1}
-              alt="Shoes"
               className="rounded-xl"
             />
           </figure>
@@ -35,7 +34,6 @@ const Blog = () => {
           <figure className=" ">
             <img
               src={blog2}
-              alt="Shoes"
               className="rounded-xl"
             />
           </figure>
@@ -52,7 +50,6 @@ const Blog = () => {
           <figure className="">
             <img
               src={blog3}
-              alt="Shoes"
               className="rounded-xl"
             />
           </figure>

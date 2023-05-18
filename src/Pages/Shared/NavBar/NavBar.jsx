@@ -30,8 +30,8 @@ const NavBar = () => {
   // );
 
   return (
-    <div className="bg-blue-500">
-      <div className="bg-blue-500 container">
+    <div className=" bg-base-100 shadow-2xl">
+      <div className=" container">
         <div className="navbar h-28">
           <div className="navbar-start">
             <div className="dropdown">
