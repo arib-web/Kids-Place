@@ -1,9 +1,11 @@
 import { createContext, useEffect, useState } from "react";
 import {
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -35,12 +37,10 @@ const AuthProviders = ({ children }) => {
       photoURL: photo,
     })
       .then(() => {
-        // Profile update successful
         console.log("User profile updated successfully");
         setLoading(false);
       })
       .catch((error) => {
-        // An error occurred
         console.error("Error updating user profile:", error);
         setLoading(false);
       });
@@ -50,6 +50,15 @@ const AuthProviders = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
+
+
+  
+  const signInWithGoogle = () => {
+    setLoading(true);
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
+  };
+
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -67,6 +76,7 @@ const AuthProviders = ({ children }) => {
     createUser,
     updateUser,
     logInUser,
+    signInWithGoogle,
     logOut,
   };
 

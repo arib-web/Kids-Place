@@ -4,12 +4,11 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
 
 const Signup = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser ,signInWithGoogle} = useContext(AuthContext);
   const [error, setError] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
 
-  
   const from = location.state?.from?.pathname || "/";
 
   const handleCreateUser = (event) => {
@@ -18,7 +17,7 @@ const Signup = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const photo = form.photo.value
+    const photo = form.photo.value;
     setError(null);
 
     createUser(email, password)
@@ -30,11 +29,23 @@ const Signup = () => {
       })
       .then(() => {
         console.log("Successfully updated");
-        navigate(from,{replace:true})
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
         console.log(error);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then(() => {
+        console.log("Successfully signed in with Google");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        setError(error.message);
+        console.error("Error signing in with Google:", error);
       });
   };
   return (
@@ -100,6 +111,15 @@ const Signup = () => {
         </div>
         <div className="form-control mt-6 mb-3">
           <button className="btn btn-warning">Create an account</button>
+        </div>
+        <div className="form-control mt-4">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={handleGoogleSignIn}
+          >
+            Sign up with Google
+          </button>
         </div>
         {error && <p className="text-center text-error mb-2">{error}</p>}
         <p className="text-center">

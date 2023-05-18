@@ -4,7 +4,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-hot-toast";
 
 const Login = () => {
-  const { logInUser } = useContext(AuthContext);
+  const { logInUser,signInWithGoogle } = useContext(AuthContext);
   const [error, setError] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
@@ -25,13 +25,26 @@ const Login = () => {
         console.log(createdUser);
         form.reset();
         toast.success("Successfully Login!");
-        navigate(from,{replace:true})
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         setError(error.message);
         console.log(error);
       });
   };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then(() => {
+        console.log("Successfully signed in with Google");
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        setError(error.message);
+        console.error("Error signing in with Google:", error);
+      });
+  };
+
   return (
     <div className="bg-[#C2E0EB] pt-32 pb-20">
       <form
@@ -74,6 +87,15 @@ const Login = () => {
         </div>
         <div className="form-control mt-6 mb-3">
           <button className="btn btn-warning">Login</button>
+        </div>
+        <div className="form-control mt-4">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={handleGoogleSignIn}
+          >
+            Sign up with Google
+          </button>
         </div>
         {error && <p className="text-center text-error mb-2">{error}</p>}
         <p className="text-center">

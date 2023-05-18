@@ -51,6 +51,14 @@ const Question = () => {
           </p>
         </div>
         {/* Question end here  */}
+        <div className="mb-4">
+          <h4 className="text-xl font-bold">
+            4.What is MongoDB aggregate and how does it work?
+          </h4>
+          <p>Aggregation is a way of processing a large number of documents in a collection by means of passing them through different stages. The stages make up what is known as a pipeline. The stages in a pipeline can filter, sort, group, reshape and modify documents that pass through the pipeline.
+          </p>
+        </div>
+        {/* Question end here  */}
       </div>
     </div>
   );
