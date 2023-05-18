@@ -7,50 +7,58 @@ const Question = () => {
       <div>
         <div className="mb-10">
           <h4 className="text-xl font-bold">
-            1.What is an access token and refresh token? How do they work and where should we store them on the client-side?
+            1.What is an access token and refresh token? How do they work and
+            where should we store them on the client-side?
           </h4>
           <p className="mt-5">
             <span className="font-bold">Ans:-</span>
-            <span className="font-bold block underline">Refresh Token:</span>
-            A refresh token just helps you re-validate a user without them having to re-enter their login credentials multiple times.
+            <span className="font-bold block underline">Refresh Token:</span>A
+            refresh token just helps you re-validate a user without them having
+            to re-enter their login credentials multiple times.
             <span className="font-bold underline  block">Access Token:</span>
-            The access token is re-issued, provided the refresh token is a valid one requesting permission to access confidential resources.
+            The access token is re-issued, provided the refresh token is a valid
+            one requesting permission to access confidential resources.
           </p>
         </div>
+        {/* Question end here  */}
+        <div className="mb-4">
+          <h4 className="text-xl font-bold">2. Compare SQL and NoSQL databases?</h4>
+          <p>
+            <span className="font-bold">Ans:-</span>
+            <span className="block">
+              1.SQL databases are vertically scalable, while NoSQL databases are
+              horizontally scalable.
+            </span>
+            <span className="block">
+              2.SQL databases are table-based, while NoSQL databases are
+              document, key-value, graph, or wide-column stores.
+            </span>
+            <span className="block">
+              3.SQL databases are better for multi-row transactions, while NoSQL
+              is better for unstructured data like documents or JSON.
+            </span>
+          </p>
+        </div>
+        {/* Question end here  */}
         {/* <div className="mb-4">
-          <h4>2.How to validate React props using PropTypes?</h4>
+          <h4 className="text-xl font-bold">2. Compare SQL and NoSQL databases?</h4>
           <p>
-            <span className="fw-bold">Ans:-</span>Props and PropTypes are
-            important mechanisms for passing read-only attributes between React
-            components.We can use React props, short for properties, to send
-            data from one component to another. If a component receives the
-            wrong type of props, it can cause bugs and unexpected errors in your
-            app.
-          </p>
-        </div>
-        <div className="mb-4">
-          <h4>3.Tell us the difference between nodejs and express js.?</h4>
-          <p>
-            <span className="fw-bold">Ans:-</span>
-            <span className="fw-bold">NodeJS</span> is the package, which
-            provides the JavaScript run-time environment, whereas{" "}
-            <span className="fw-bold">Express</span> is a framework that sits on
-            top of NodeJS and helps us to handle requests and responses.
-          </p>
-        </div>
-        <div className="mb-4">
-          <h4>
-            3.What is a custom hook, and why will you create a custom hook?
-          </h4>
-          <p>
-            <span className="fw-bold">Ans:-</span>Custom React JS hooks offer
-            reusability as when a custom hook is created, it can be reused
-            easily, which makes the code cleaner and reduces the time to write
-            the code. It also enhances the rendering speed of the code as a
-            custom hook does not need to be rendered again and again while
-            rendering the whole code.
+            <span className="font-bold">Ans:-</span>
+            <span className="block">
+              1.SQL databases are vertically scalable, while NoSQL databases are
+              horizontally scalable.
+            </span>
+            <span className="block">
+              2.SQL databases are table-based, while NoSQL databases are
+              document, key-value, graph, or wide-column stores.
+            </span>
+            <span className="block">
+              3.SQL databases are better for multi-row transactions, while NoSQL
+              is better for unstructured data like documents or JSON.
+            </span>
           </p>
         </div> */}
+        {/* Question end here  */}
       </div>
     </div>
   );
