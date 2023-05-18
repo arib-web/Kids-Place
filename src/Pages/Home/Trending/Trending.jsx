@@ -8,38 +8,35 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import { FreeMode } from "swiper";
 
 const Trending = () => {
   return (
     <div className="container">
       <div className="text-center  my-16">
-        <h2 className="text-5xl ">Trending Product</h2>
-        <p className="text-xl w-1/2 mx-auto mt-5">
+        <h2 className=" text-3xl md:text-5xl font-bold">Trending Product</h2>
+        <p className="texl-lg md:text-xl w-full md:w-1/2 mx-auto mt-5">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod incididunt ut labore et dolore magna aliqua.
         </p>
       </div>
       <div className="mb-16">
         <Swiper
-          freeMode={true}
-          grabCursor={true}
-          modules={[FreeMode]}
-          className="mySwiper"
+          spaceBetween={50}
           slidesPerView={3}
-          spaceBetween={10}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
           breakpoints={{
             0: {
               slidesPerView: 1,
               spaceBetween: 10,
             },
             480: {
-              slidesPerView: 1,
+              slidesPerView: 2,
               spaceBetween: 10,
             },
             768: {
-              slidesPerView: 2,
-              spaceBetween: 10,
+              slidesPerView: 3,
+              spaceBetween: 15,
             },
           }}
         >
