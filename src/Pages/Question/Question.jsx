@@ -7,16 +7,14 @@ const Question = () => {
       <div>
         <div className="mb-10">
           <h4 className="text-xl font-bold">
-            1.Tell us the differences between uncontrolled and controlled
-            components.?
+            1.What is an access token and refresh token? How do they work and where should we store them on the client-side?
           </h4>
-          <p>
-            <span className="fw-bold">Ans:-</span>In React, controlled
-            components refer to components that have their state and behavior
-            controlled by the parent component. These components rely on props
-            passed down from the parent component to update their state and
-            behavior. Uncontrolled components refer to components that manage
-            their own state internally.
+          <p className="mt-5">
+            <span className="font-bold">Ans:-</span>
+            <span className="font-bold block underline">Refresh Token:</span>
+            A refresh token just helps you re-validate a user without them having to re-enter their login credentials multiple times.
+            <span className="font-bold underline  block">Access Token:</span>
+            The access token is re-issued, provided the refresh token is a valid one requesting permission to access confidential resources.
           </p>
         </div>
         {/* <div className="mb-4">
