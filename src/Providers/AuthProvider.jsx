@@ -5,8 +5,9 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from "firebase/auth";
-import app from "../firebase/firebase.config";
+import app from "../Firebase/firebase.config";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);

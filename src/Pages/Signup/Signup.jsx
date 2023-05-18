@@ -1,37 +1,42 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Signup = () => {
-    const { createUser, updateUser } = useContext(AuthContext)
-    const [error, setError] = useState(null)
+  const { createUser, updateUser } = useContext(AuthContext);
+  const [error, setError] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
+  
+  const from = location.state?.from?.pathname || "/";
 
-    const handleCreateUser = event => {
-        event.preventDefault();
-        const form = event.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const password = form.password.value;
-        setError(null)
+  const handleCreateUser = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value
+    setError(null);
 
-        createUser(email, password)
-            .then(result => {
-                const createdUser = result.user;
-                console.log(createdUser)
-                toast.success('Successfully Register!')
-
-                // setTimeout(() => navagate('/'), 2000)
-
-                updateUser(name)
-                    .then()
-                    .catch(error => console.log(error))
-            })
-            .catch(error => {
-                setError(error.message)
-                console.log(error)
-            })
-    }
+    createUser(email, password)
+      .then((result) => {
+        const createdUser = result.user;
+        console.log(createdUser);
+        toast.success("Successfully Registered!");
+        return updateUser(name, photo); // Return the promise to chain the update
+      })
+      .then(() => {
+        console.log("Successfully updated");
+        navigate(from,{replace:true})
+      })
+      .catch((error) => {
+        setError(error.message);
+        console.log(error);
+      });
+  };
   return (
     <div className="bg-[#C2E0EB] pt-32 pb-20">
       <form

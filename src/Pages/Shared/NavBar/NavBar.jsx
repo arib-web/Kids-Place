@@ -1,33 +1,15 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/Toyhouse-Logo.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const NavBar = () => {
-  // const navItems = (
-  //   <>
-  //     <li>
-  //       <Link to="/">Home</Link>{" "}
-  //     </li>
-  //     <li>
-  //       {" "}
-  //       <Link to="/about">About</Link>{" "}
-  //     </li>
-  //     {/* {user?.email ? (
-  //       <>
-  //         <li>
-  //           <Link to="/bookings">My Bookings</Link>
-  //         </li>
-  //         <li>
-  //           <button onClick={handleLogOut}>Log out</button>
-  //         </li>
-  //       </>
-  //     ) : (
-  //       <li>
-  //         {" "}
-  //         <Link to="/login">Login</Link>{" "}
-  //       </li>
-  //     )} */}
-  //   </>
-  // );
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className=" bg-base-100 shadow-2xl">
@@ -59,18 +41,40 @@ const NavBar = () => {
                   <Link>Home</Link>
                 </li>
                 <li>
-                  <Link to="/destinations">Destination</Link>
+                  <Link to="/alltoys">All Toys</Link>
                 </li>
                 <li>
                   <Link to="/blog">Blogs</Link>
                 </li>
-                <li>
-                  <Link to="">Contact</Link>
-                </li>
+
+                {user?.email ? (
+                  <>
+                    <li>
+                      <Link to="/addtoys">Add Toy</Link>
+                    </li>
+                    <li>
+                      <Link to="/mytoys">My Toys</Link>
+                    </li>
+                    <li>
+                      <button onClick={handleLogOut}>Log out</button>
+                    </li>
+                    {user && (
+                      <img
+                        className="w-10 h-10 rounded-full"
+                        src={user.photoURL}
+                        alt=""
+                      />
+                    )}
+                  </>
+                ) : (
+                  <li>
+                    <Link to="/login">Login</Link>
+                  </li>
+                )}
               </ul>
             </div>
             <Link className="w-20" to="/">
-              <img src={logo} alt=""  />
+              <img src={logo} alt="" />
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
@@ -79,18 +83,41 @@ const NavBar = () => {
                 <Link>Home</Link>
               </li>
               <li>
-                <Link to="/destinations">Destination</Link>
+                <Link to="/alltoys">All Toys</Link>
               </li>
               <li>
                 <Link to="/blog">Blogs</Link>
               </li>
-              <li>
-                <Link to="">Contact</Link>
-              </li>
+
+              {user?.email ? (
+                <>
+                  <li>
+                    <Link to="/addtoys">Add Toy</Link>
+                  </li>
+                  <li>
+                    <Link to="/mytoys">My Toys</Link>
+                  </li>
+
+                  <li>
+                    <button onClick={handleLogOut}>Log out</button>
+                  </li>
+                  {user && (
+                      <img
+                        className="w-10 h-10 rounded-full"
+                        src={user.photoURL}
+                        alt=""
+                      />
+                    )}
+                </>
+              ) : (
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+              )}
             </ul>
           </div>
           <div className="navbar-end">
-            <a className="btn ">Get started</a>
+            <button className="ml-2 btn">Get Started</button>
           </div>
         </div>
       </div>
