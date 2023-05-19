@@ -25,7 +25,7 @@ const Signup = () => {
         const createdUser = result.user;
         console.log(createdUser);
         toast.success("Successfully Registered!");
-        return updateUser(name, photo); // Return the promise to chain the update
+        return updateUser(name, photo); 
       })
       .then(() => {
         console.log("Successfully updated");

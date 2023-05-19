@@ -25,7 +25,7 @@ const Blog = () => {
             <span>By, <span className="text-[#F379A7]">June Cha</span> May 25, 2021</span>
             <h2 className="card-title mb-4">Mother revolves around her children</h2>
             <div className="card-actions">
-              <button className="btn ">Buy Now</button>
+              <button className="btn ">Read More</button>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ const Blog = () => {
             <span>By, <span className="text-[#F379A7]">June Cha</span> January 10, 2023</span>
             <h2 className="card-title mb-4">Baby Planet's toys makes learning so easy</h2>
             <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-primary">Read More</button>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@ const Blog = () => {
             <span>By, <span className="text-[#F379A7]">June Cha</span> July 24, 2022</span>
             <h2 className="card-title mb-4">Learn while you grow toys Baby Planet</h2>
             <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
+              <button className="btn btn-primary">Read More</button>
             </div>
           </div>
         </div>

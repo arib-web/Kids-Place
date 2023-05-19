@@ -94,7 +94,7 @@ const Login = () => {
             className="btn btn-secondary"
             onClick={handleGoogleSignIn}
           >
-            Sign up with Google
+            Login with Google
           </button>
         </div>
         {error && <p className="text-center text-error mb-2">{error}</p>}
