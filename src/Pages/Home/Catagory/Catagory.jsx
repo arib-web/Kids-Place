@@ -9,7 +9,7 @@ const Category = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [tabs, setTabs] = useState([
     { name: "Sports Car", sub_category: "car", subCategories: [] },
-    {  name: "Mini Truck", sub_category: "truck", subCategories: [] },
+    { name: "Mini Truck", sub_category: "truck", subCategories: [] },
     { name: "Police Car", sub_category: "police", subCategories: [] },
   ]);
 
@@ -48,7 +48,11 @@ const Category = () => {
         </p>
       </div>
       <div className="container mx-auto p-4">
-        <Tabs className="shadd shadow-2xl " selectedIndex={activeTab} onSelect={handleTabClick}>
+        <Tabs
+          className="shadd shadow-2xl "
+          selectedIndex={activeTab}
+          onSelect={handleTabClick}
+        >
           <TabList className="flex mb-10 bg-pink-200 rounded">
             {tabs.map((tab, index) => (
               <Tab

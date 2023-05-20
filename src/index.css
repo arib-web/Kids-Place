@@ -8,5 +8,5 @@
 }
 
 .btn {
-    @apply rounded-md px-7 py-2 font-medium cursor-pointer text-white transition duration-200 shadow-md font-medium border-none bg-[#F379A7] hover:bg-[#95B3E0]
+    @apply rounded-md px-5 py-1 md:px-7 md:py-2 font-medium cursor-pointer text-white transition duration-200 shadow-md font-medium border-none bg-[#F379A7] hover:bg-[#95B3E0]
 }
