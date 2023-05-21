@@ -6,14 +6,32 @@ const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
 
-  const url = `http://localhost:5000/toys?seller_email=${user?.email}`;
+  const url = `https://kids-place-server.vercel.app/toys?seller_email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, [url]);
-  console.log(toys);
+
+  const handleDelete = (id) => {
+    const proceed = confirm("Are You sure you want to delete");
+    if (proceed) {
+      fetch(`https://kids-place-server.vercel.app/toys/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            alert("deleted successful");
+            const remaining = toys.filter((toy) => toy._id !== id);
+            setToys(remaining);
+          }
+        });
+    }
+  };
+
+  
 
   return (
     <div className="container sm:px-4">
@@ -37,7 +55,11 @@ const MyToys = () => {
           </thead>
           <tbody className="text-center">
             {toys.map((toy) => (
-              <MyToyRow key={toy._id} toy={toy}></MyToyRow>
+              <MyToyRow
+                key={toy._id}
+                toy={toy}
+                handleDelete={handleDelete}
+              ></MyToyRow>
             ))}
           </tbody>
         </table>

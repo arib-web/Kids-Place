@@ -21,7 +21,9 @@ const AllToysRow = ({ toy }) => {
       <td>${price}</td>
       <td className="sm:table-cell hidden">{quantity}</td>
       <td>
-        <button className="btn">View Details</button>
+        {/* <Link to={`/details/${_id}`}> */}
+          <button className="btn">View Details</button>
+        {/* </Link> */}
       </td>
     </tr>
   );

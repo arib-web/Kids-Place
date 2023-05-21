@@ -12,7 +12,7 @@ const AddToy = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/toys", {
+    fetch("https://kids-place-server.vercel.app/toys", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -32,7 +32,7 @@ const AddToy = () => {
     <div className="container mx-auto p-4">
       <div className="bg-blue-200 max-w-4xl mx-auto py-5 mt-4 mb-4 rounded-xl">
         <h2 className="text-5xl mb-10 mt-10 text-center underline">
-          My Toys Page
+          Add Your Toys Here
         </h2>
       </div>
       <form

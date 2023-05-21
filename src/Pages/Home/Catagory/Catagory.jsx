@@ -19,7 +19,7 @@ const Category = () => {
         const data = await Promise.all(
           tabs.map(async (tab) => {
             const response = await fetch(
-              `http://localhost:5000/catagory/${tab.sub_category}`
+              `https://kids-place-server.vercel.app/catagory/${tab.sub_category}`
             );
             const subCategories = await response.json();
             return { ...tab, subCategories };

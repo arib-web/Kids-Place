@@ -6,7 +6,7 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:5000/toys`);
+      const response = await fetch(`https://kids-place-server.vercel.app/toys`);
       const data = await response.json();
       setToys(data);
     };
