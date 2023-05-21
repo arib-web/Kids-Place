@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import MyToyRow from "./MyToyRow";
+import useTitle from "../../PageTitle/useTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
+  useTitle("My Toys")
 
   const url = `https://kids-place-server.vercel.app/toys?seller_email=${user?.email}`;
 

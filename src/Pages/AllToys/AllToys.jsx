@@ -1,9 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import AllToysRow from "./AllToysRow";
 import { useEffect, useState } from "react";
+import useTitle from "../../PageTitle/useTitle";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
+  useTitle("AllToys")
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(`https://kids-place-server.vercel.app/toys`);

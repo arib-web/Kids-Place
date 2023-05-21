@@ -1,6 +1,8 @@
 import React from "react";
+import useTitle from "../../PageTitle/useTitle";
 
 const Question = () => {
+  useTitle("Blog")
   return (
     <div className="container px-5 md:p-0">
       <h2 className="text-center text-5xl text-blue-300 my-10">Blog Page</h2>

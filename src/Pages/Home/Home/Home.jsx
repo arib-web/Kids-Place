@@ -4,8 +4,10 @@ import Trending from '../Trending/Trending';
 import Blog from '../Blog/Blog';
 import Catagory from '../Catagory/Catagory';
 import ToyGallery from '../ToyGallery/ToyGallery';
+import useTitle from '../../../PageTitle/useTitle';
 
 const Home = () => {
+    useTitle("Home")
     return (
         <div>
             <Banner></Banner>
